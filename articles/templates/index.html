@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Articles</h1>
+
+<div>
+  {% for article in articles %}
+  <div>
+    <h2>
+      <a href="{% url 'detail' id=article.id %}">{{ article.title }}</a>
+    </h2>
+    <div>
+      {{ article.truncate_snippet }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
