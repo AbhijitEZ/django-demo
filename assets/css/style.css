@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  color: #fff;
+  background: #6761a8;
+}
+header {
+  padding: 8px;
+  height: 60px;
+  background: #f26430;
+  width: 100%;
+  box-shadow: 0px 5px 39px 6px rgba(0, 0, 0, 0.54);
+}
+.title-section {
+  position: relative;
+}
+.add-btn {
+  padding: 10px 40px;
+  position: absolute;
+  right: 3%;
+  top: 8%;
+}
+.logo {
+  vertical-align: middle;
+  width: 45px;
+}
+.card-wrapper {
+  box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.card-desc {
+  color: #2a2d34;
+}
+.form-wrapper {
+  margin: 10px auto;
+  width: 50%;
+}
+.detail-title {
+  position: relative;
+}
+.btn-grp {
+  position: absolute;
+  top: 11%;
+  right: 1%;
+}

@@ -1,8 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="text-center p-2"><h2>Add Article</h2></div>
 
+<form method="POST" class="form-wrapper">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="Title">Title</label
+    ><input type="text" name="title" id="Title" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="Slug">Slug</label
+    ><input type="text" name="slug" id="Slug" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="Body">Body</label>
+    <textarea name="body" id="Body" class="form-control"></textarea>
+  </div>
 
-Add Page
-
-{% endblock  %}
+  <button class="btn btn-primary px-5" type="submit">Add</button>
+</form>
+{% endblock %}

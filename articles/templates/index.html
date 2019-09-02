@@ -1,18 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="title-section">
+  <h1 class="text-center">Articles</h1>
+  <a href="{% url 'add' %}"
+    ><button class="btn btn-primary add-btn">Add</button></a
+  >
+</div>
 
-
-<h1>Articles</h1>
-
-<div>
+<div class="d-flex flex-wrap m-auto">
   {% for article in articles %}
-  <div>
-    <h2>
-      <a href="{% url 'detail' id=article.id %}">{{ article.title }}</a>
-    </h2>
-    <div>
-      {{ article.truncate_snippet }}
+  <div class="card m-2 card-wrapper" style="width: 18rem;">
+    <div class="card-body">
+      <a href="{% url 'detail' id=article.id %}"
+        ><h5 class="card-title">{{ article.title }}</h5></a
+      >
+      <h6 class="card-subtitle mb-2 text-muted">{{ article.date_added }}</h6>
+      <p class="card-text card-desc">
+        {{ article.truncate_snippet }}
+      </p>
     </div>
   </div>
   {% endfor %}

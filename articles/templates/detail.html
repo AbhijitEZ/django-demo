@@ -1,11 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Article Details</h1>
-<div class="article-detail">
-  <div class="article-detail-title">
-    {{ article.title }}
+<div class="text-center p-2 detail-title">
+  <h2>{{ article.title }}</h2>
+  <div class="btn-grp">
+    <a href="{% url 'delete' id=article.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'edit' id=article.id %}" class="btn btn-success">edit</a>
   </div>
-  <div class="article-detail-body">
+</div>
+<div class="container">
+  <div class="">
     {{ article.body }}
   </div>
 </div>
