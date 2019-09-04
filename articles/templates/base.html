@@ -18,6 +18,19 @@
           <img src="{% static 'images/logo.svg' %}" alt="logo" />
         </a>
       </div>
+      {% if user.is_authenticated %}
+      <div class="log-out">
+        <form action="{% url 'accounts:logout' %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-danger" type="submit">Logout</button>
+        </form>
+      </div>
+      {% else %}
+      <div>
+        <a href="{% url 'accounts:login' %}" class="btn btn-success">Login</a>
+        <a href="{% url 'accounts:signup' %}" class="btn btn-primary">SignUp</a>
+      </div>
+      {% endif %}
     </header>
     {% block content %} {% endblock %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

@@ -14,10 +14,15 @@ header {
   height: 60px;
   background: #f26430;
   width: 100%;
-  box-shadow: 0px 5px 39px 6px rgba(0, 0, 0, 0.54);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
 }
 .title-section {
   position: relative;
+}
+.listing-articles {
+  margin: 12px 16px;
 }
 .add-btn {
   padding: 10px 40px;
@@ -35,15 +40,36 @@ header {
 .card-desc {
   color: #2a2d34;
 }
+.content-detail {
+  padding: 20px;
+  border-radius: 25px;
+}
+.article-body {
+  font-size: 20px;
+  color: #000;
+}
 .form-wrapper {
   margin: 10px auto;
   width: 50%;
 }
+.form-wrapper ul {
+  list-style: none;
+  color: #f26430;
+}
 .detail-title {
   position: relative;
+}
+.image-wrapper {
+  width: 52%;
+  margin: 0 auto 33px auto;
+}
+.image-wrapper img {
+  width: 100%;
 }
 .btn-grp {
   position: absolute;
   top: 11%;
   right: 1%;
+}
+.alert-error {
 }

@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="text-center p-2"><h2>Edit Article</h2></div>
-<form method="POST" class="form-wrapper">
+<form method="POST" class="form-wrapper" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="form-group">
+  
     <label for="Title">Title</label
     ><input
       type="text"
@@ -12,7 +13,13 @@
       class="form-control"
       value="{{ article.title }}"
     />
+    {% if form.title.errors %}
+    <div class="alert-error" role="alert">
+      {{ form.title.errors }}
+    </div>
+    {% endif %}
   </div>
+
   <div class="form-group">
     <label for="Slug">Slug</label
     ><input
@@ -22,12 +29,22 @@
       class="form-control"
       value="{{ article.slug }}"
     />
+    {% if form.slug.errors %}
+    <div  role="alert">
+      {{ form.slug.errors }}
+    </div>
+    {% endif %}
   </div>
   <div class="form-group">
     <label for="Body">Body</label>
     <textarea rows="4" cols="50" id="Body" class="form-control" name="body">
   {{ article.body }}</textarea
     >
+  </div>
+  <div class="form-group">
+    <label for="Thumbnail01">Edit Thumbnail</label>
+    <input type="file" class="form-control-file" id="Thumbnail01" name="thumbnail" value="{{ article.thumbnail.url }}">
+
   </div>
   <button class="btn btn-primary px-5" type="submit">Edit</button>
 </form>

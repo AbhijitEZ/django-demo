@@ -8,8 +8,16 @@
   </div>
 </div>
 <div class="container">
-  <div class="">
-    {{ article.body }}
+  <div class="image-wrapper">
+    <img src="{{ article.thumbnail.url }}" alt="Hero image" />
+  </div>
+  <div class="container-fluid bg-light content-detail">
+    <div class="text-dark my-3">
+      {{ article.date_added }}
+    </div>
+    <div class="text-body article-body">
+      {{ article.body }}
+    </div>
   </div>
 </div>
 
